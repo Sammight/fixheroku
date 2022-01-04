@@ -69,7 +69,7 @@ RUN curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.4/fixuid-0.
 #  ln -s /usr/local/lib/code-server/code-server /usr/local/bin/code-server
 
 RUN cd /tmp
-RUN curl -L --silent https://github.com/coder/code-server/releases/download/v3.12.0/code-server-3.12.0-linux-amd64.tar.gz
+RUN wget https://github.com/coder/code-server/releases/download/v3.12.0/code-server-3.12.0-linux-amd64.tar.gz
 RUN tar -xzf code-server-3.12.0-linux-amd64.tar.gz
 RUN code-server* /usr/local/lib/code-server
 RUN ln -s /usr/local/lib/code-server/code-server /usr/local/bin/code-server
