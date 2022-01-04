@@ -4,8 +4,8 @@ FROM heroku/heroku:20
 # Install python and pip
 RUN wget http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.31-1ubuntu1.2_amd64.deb
 RUN apt install ./sudo_1.8.31-1ubuntu1.2_amd64.deb
-RUN adduser myuser --defaults --password vM6r7p2#6
-RUN usermod -aG sudo myuser
+#RUN adduser myuser --defaults --password vM6r7p2#6
+#RUN usermod -aG sudo myuser
 #RUN apk add --no-cache --update python3 py3-pip bash
 #ADD ./webapp/requirements.txt /tmp/requirements.txt
 
