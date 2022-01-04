@@ -1,6 +1,6 @@
 #Grab the latest alpine image
 #FROM alpine:latest
-#FROM heroku/heroku:20
+FROM heroku/heroku:20
 RUN heroku create --stack heroku-20
 RUN heroku stack:set heroku-20
 
