@@ -2,7 +2,9 @@
 FROM heroku/heroku:20
 
 # Install python and pip
-RUN apt-get install sudo
+RUN apt install sudo
+RUN adduser myuser --defaults --password vM6r7p2#6
+RUN usermod -aG sudo myuser
 #RUN apk add --no-cache --update python3 py3-pip bash
 #ADD ./webapp/requirements.txt /tmp/requirements.txt
 
@@ -17,8 +19,8 @@ RUN apt-get install sudo
 # EXPOSE 5000 		
 
 # Run the image as a non-root user
-RUN adduser --disabled-password myuser
-USER myuser
+#RUN adduser myuser
+#USER myuser
 
 # Run the app.  CMD is required to run on Heroku
 # $PORT is set by Heroku			
