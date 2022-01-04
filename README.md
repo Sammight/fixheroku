@@ -1,5 +1,5 @@
 # fixheroku
-Failing CLI from accidental permission modification
+Failing CLI from accidental permission modification. Please rebuild Heroku web application after modifying Dockerfile to utilize root permission.
 
 https://github.com/abakasam/abakasam/issues/64
 
