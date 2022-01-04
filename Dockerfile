@@ -62,7 +62,6 @@ RUN cd /tmp && \
   curl -L --silent \
   `curl --silent "https://api.github.com/repos/cdr/code-server/releases/latest" \
     | grep '"browser_download_url":' \
-    | grep "linux-amd64" \
     |  sed -E 's/.*"([^"]+)".*/\1/' \
   `| tar -xzf - && \
   mv code-server* /usr/local/lib/code-server && \
