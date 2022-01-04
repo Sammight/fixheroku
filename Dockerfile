@@ -58,14 +58,21 @@ RUN curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.4/fixuid-0.
     mkdir -p /etc/fixuid && \
     printf "user: coder\ngroup: coder\n" > /etc/fixuid/config.yml
     
-RUN cd /tmp && \
-  curl -L --silent \
-  `curl --silent "https://api.github.com/repos/cdr/code-server/releases/latest" \
-    | grep '"browser_download_url":' \
-    |  sed -E 's/.*"([^"]+)".*/\1/' \
-  `| tar -xzf - && \
-  mv code-server* /usr/local/lib/code-server && \
-  ln -s /usr/local/lib/code-server/code-server /usr/local/bin/code-server
+#RUN cd /tmp && \
+#  curl -L --silent \
+#  `curl --silent "https://api.github.com/repos/cdr/code-server/releases/latest" \
+#    | grep '"browser_download_url":' \
+#    | grep "linux-amd64" \
+#    |  sed -E 's/.*"([^"]+)".*/\1/' \
+#  `| tar -xzf - && \
+#  mv code-server* /usr/local/lib/code-server && \
+#  ln -s /usr/local/lib/code-server/code-server /usr/local/bin/code-server
+
+RUN cd /tmp
+RUN curl -L --silent https://github.com/coder/code-server/releases/download/v3.12.0/code-server-3.12.0-linux-amd64.tar.gz
+RUN tar -xzf code-server-3.12.0-linux-amd64.tar.gz
+RUN code-server* /usr/local/lib/code-server
+RUN ln -s /usr/local/lib/code-server/code-server /usr/local/bin/code-server
 
 ENV PORT=8080
 EXPOSE 8080
