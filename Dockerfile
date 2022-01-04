@@ -2,6 +2,7 @@
 FROM heroku/heroku:20
 
 # Install python and pip
+RUN apt-get install sudo
 #RUN apk add --no-cache --update python3 py3-pip bash
 #ADD ./webapp/requirements.txt /tmp/requirements.txt
 
