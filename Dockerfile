@@ -1,8 +1,6 @@
 #Grab the latest alpine image
 #FROM alpine:latest
 FROM heroku/heroku:20
-RUN heroku create --stack heroku-20
-RUN heroku stack:set heroku-20
 
 # Install python and pip
 #RUN apk add --no-cache --update python3 py3-pip bash
