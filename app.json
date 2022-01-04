@@ -3,10 +3,11 @@
   "description": "Run visual code in browser to test sudo",
   "repository": "https://github.com/ivang7/heroku-vscode",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
+  "stack": "container",
   "keywords": ["vscode"],
   "env": {
     "PASSWORD": {
-      "description": "Fix sudo"
+      "description": "Password for VSCode"
     }
   } 
 }
